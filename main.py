@@ -62,15 +62,15 @@ for column in df2.columns:
 choropleth_data = choropleth_data.drop(labels='State', axis=1)
 
 df.rename(columns={'State': 'state'}, inplace=True)
-sta_list = ['Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
-            'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
-            'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
-            'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir', 'Jharkhand',
-            'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya-pradesh',
-            'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-            'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
-            'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
-            'Uttarakhand', 'West-bengal']
+sta_list = ['andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
+            'assam', 'bihar', 'chandigarh', 'chhattisgarh',
+            'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
+            'haryana', 'himachal-pradesh', 'jammu-&-kashmir', 'jharkhand',
+            'karnataka', 'kerala', 'ladakh', 'lakshadweep', 'madhya-pradesh',
+            'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+            'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
+            'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
+            'uttarakhand', 'west-bengal']
 state['state'] = pd.Series(data=sta_list)
 state_final = pd.merge(df, state, how='outer', on='state')
 districts_final = pd.merge(districts_tran, districts,
@@ -88,15 +88,15 @@ with st.container():
     scatter_year = st.selectbox('Please select the Year',
                                 ('2018', '2019', '2020', '2021', '2022'))
     st.write(' ')
-    scatter_state = st.selectbox('Please select State', ('Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
-                                                         'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
-                                                         'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
-                                                         'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir', 'Jharkhand',
-                                                         'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya-pradesh',
-                                                         'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-                                                         'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
-                                                         'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
-                                                         'Uttarakhand', 'West-bengal'), index=30)
+    scatter_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
+                                                         'assam', 'bihar', 'chandigarh', 'chhattisgarh',
+                                                         'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
+                                                         'haryana', 'himachal-pradesh', 'jammu-&-kashmir', 'jharkhand',
+                                                         'karnataka', 'kerala', 'ladakh', 'lakshadweep', 'madhya-pradesh',
+                                                         'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+                                                         'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
+                                                         'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
+                                                         'uttarakhand', 'west-bengal'), index=30)
     scatter_year = int(scatter_year)
     scatter_reg_df = app_opening[(app_opening['Year'] == scatter_year) & (
         app_opening['State'] == scatter_state)]
@@ -181,15 +181,15 @@ with geo_analysis:
 # --------------------------------------------------- Device analysis statewise ------------------------------------------------------------
 with Device_analysis:
     st.subheader(':white[User Device analysis->Statewise:]')
-    tree_map_state = st.selectbox('Please select State', ('Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
-                                                          'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
-                                                          'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
-                                                          'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir', 'Jharkhand',
-                                                          'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya-pradesh',
-                                                          'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-                                                          'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
-                                                          'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
-                                                          'Uttarakhand', 'West-bengal'), index=30, key='tree_map_state')
+    tree_map_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
+                                                         'assam', 'bihar', 'chandigarh', 'chhattisgarh',
+                                                         'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
+                                                         'haryana', 'himachal-pradesh', 'jammu-&-kashmir', 'jharkhand',
+                                                         'karnataka', 'kerala', 'ladakh', 'lakshadweep', 'madhya-pradesh',
+                                                         'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+                                                         'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
+                                                         'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
+                                                         'uttarakhand', 'west-bengal'), index=30, key='tree_map_state')
     tree_map_state_year = int(st.radio('Please select the Year',
                                        ('2018', '2019', '2020', '2021', '2022'), horizontal=True, key='tree_map_state_year'))
     tree_map_state_quater = int(st.radio('Please select the Quarter',
@@ -216,15 +216,15 @@ with payment_analysis:
     # querypa = 'select * from agg_transaction_table'
     # payment_mode = pd.read_sql(querypa, con=connection)
     payment_mode = pd.read_csv('https://raw.githubusercontent.com/sivaranjani9715/Phonepe/main/csv/AggTrans_data.csv', index_col=0)
-    pie_pay_mode_state = st.selectbox('Please select State', ('Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
-                                                              'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
-                                                              'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
-                                                              'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir', 'Jharkhand',
-                                                              'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya-pradesh',
-                                                              'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-                                                              'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
-                                                              'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
-                                                              'Uttarakhand', 'West-bengal'), index=30, key='pie_pay_mode_state')
+    pie_pay_mode_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
+                                                         'assam', 'bihar', 'chandigarh', 'chhattisgarh',
+                                                         'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
+                                                         'haryana', 'himachal-pradesh', 'jammu-&-kashmir', 'jharkhand',
+                                                         'karnataka', 'kerala', 'ladakh', 'lakshadweep', 'madhya-pradesh',
+                                                         'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+                                                         'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
+                                                         'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
+                                                         'uttarakhand', 'west-bengal'), index=30, key='pie_pay_mode_state')
     pie_pay_mode_year = int(st.radio('Please select the Year',
                                      ('2018', '2019', '2020', '2021', '2022'), horizontal=True, key='pie_pay_year'))
     pie_pay_mode__quater = int(st.radio('Please select the Quarter',
@@ -246,15 +246,15 @@ with payment_analysis:
 # --------------------------------------- Transacion data analysis statewise ------------------------------------------------------------------
 with transac_yearwise:
     st.subheader(':white[Transaction analysis->Statewise:]')
-    transac_state = st.selectbox('Please select State', ('Andaman-&-nicobar-islands', 'Andhra-pradesh', 'Arunachal-pradesh',
-                                                         'Assam', 'Bihar', 'Chandigarh', 'Chhattisgarh',
-                                                         'Dadra-&-nagar-haveli-&-daman-&-diu', 'Delhi', 'Goa', 'Gujarat',
-                                                         'Haryana', 'Himachal-pradesh', 'Jammu-&-kashmir', 'Jharkhand',
-                                                         'Karnataka', 'Kerala', 'Ladakh', 'Lakshadweep', 'Madhya-pradesh',
-                                                         'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-                                                         'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Sikkim',
-                                                         'Tamil-nadu', 'Telangana', 'Tripura', 'Uttar-pradesh',
-                                                         'Uttarakhand', 'West-bengal'), index=30, key='transac')
+    transac_state = st.selectbox('Please select State', ('andaman-&-nicobar-islands', 'andhra-pradesh', 'arunachal-pradesh',
+                                                         'assam', 'bihar', 'chandigarh', 'chhattisgarh',
+                                                         'dadra-&-nagar-haveli-&-daman-&-diu', 'delhi', 'goa', 'gujarat',
+                                                         'haryana', 'himachal-pradesh', 'jammu-&-kashmir', 'jharkhand',
+                                                         'karnataka', 'kerala', 'ladakh', 'lakshadweep', 'madhya-pradesh',
+                                                         'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+                                                         'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
+                                                         'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh',
+                                                         'uttarakhand', 'west-bengal'), index=30, key='transac')
     transac__quater = int(st.radio('Please select the Quarter',
                                    ('1', '2', '3', '4'), horizontal=True, key='trans_quater'))
     transac_type = st.selectbox('Please select the Mode',
